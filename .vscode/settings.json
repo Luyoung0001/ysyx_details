@@ -1,5 +1,10 @@
 {
     "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace",
     "editor.fontSize": 16,
-    "terminal.integrated.fontSize": 14
+    "terminal.integrated.fontSize": 14,
+    "verilog.linting.iverilog.arguments": "-i",
+    "verilog.linting.linter": "verilator",
+    "verilog.ctags.path": "/opt/ctags/ctags",
+    "verilog.formatting.iStyleVerilogFormatter.style": "K&R",
+    "verilog-formatter.istyle.style": "K&R"
 }
