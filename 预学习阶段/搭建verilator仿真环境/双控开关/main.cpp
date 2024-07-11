@@ -1,7 +1,7 @@
 #include <assert.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "Vour_OnOff.h"
+#include "./obj_dir/Vour_OnOff.h"
 #include "verilated_vcd_c.h"
 
 vluint64_t main_time = 0;  // initial 仿真时间
@@ -20,7 +20,7 @@ int main(int argc, char** argv) {
     top->trace(tfp, 0);
     tfp->open("wave.vcd");  //打开vcd
 
-    while (!sc_time_stamp() < 20 && !Verilated::gotFinish()) {
+    while (sc_time_stamp() < 20 && !Verilated::gotFinish()) {
         int a = rand() & 1;
         int b = rand() & 1;
         top->a = a;
