@@ -3,7 +3,7 @@ module encode83(x,en,y,tag,bcd7seg);
     input [7:0] x;
     input en;
     output reg [2:0] y;
-    output reg [6:0] bcd7seg;
+    output reg [7:0] bcd7seg;
     output reg tag;
     integer i;
     always @(x or en) begin
@@ -26,23 +26,23 @@ module encode83(x,en,y,tag,bcd7seg);
         begin
             case (y)
                 3'b000:
-                    bcd7seg = 7'b000_0000;  //0
+                    bcd7seg = 8'b00000010;  //0
                 3'b001:
-                    bcd7seg = 7'b001_0000;  //1
+                    bcd7seg = 8'b10011111;  //1
                 3'b010:
-                    bcd7seg = 7'b010_0000;  //2
+                    bcd7seg = 8'b00100101;  //2
                 3'b011:
-                    bcd7seg = 7'b011_0000;  //3
+                    bcd7seg = 8'b00001101;  //3
                 3'b100:
-                    bcd7seg = 7'b100_0000;  //4
+                    bcd7seg = 8'b10011001;  //4
                 3'b101:
-                    bcd7seg = 7'b101_0000;  //5
+                    bcd7seg = 8'b01001001;  //5
                 3'b110:
-                    bcd7seg = 7'b110_0000;  //6
+                    bcd7seg = 8'b01000001;  //6
                 3'b111:
-                    bcd7seg = 7'b111_0000;  //7
+                    bcd7seg = 8'b00011111;  //7
                 default:
-                    bcd7seg = 7'b000_0000;
+                    bcd7seg = 8'b00000010;
             endcase
         end
     end
@@ -81,7 +81,7 @@ module top(
                  .en(sw[8]),
                  .y(ledr[2:0]),
                  .tag(ledr[3]),
-                 .bcd7seg(seg0[6:0])
+                 .bcd7seg(seg0[7:0])
              );
 
     assign VGA_CLK = clk;
