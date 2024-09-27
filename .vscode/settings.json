@@ -6,5 +6,8 @@
     "verilog.linting.linter": "verilator",
     "verilog.ctags.path": "/opt/ctags/ctags",
     "verilog.formatting.iStyleVerilogFormatter.style": "K&R",
-    "verilog-formatter.istyle.style": "K&R"
+    "verilog-formatter.istyle.style": "K&R",
+    "files.watcherExclude": {
+        "**/target": true
+    }
 }
